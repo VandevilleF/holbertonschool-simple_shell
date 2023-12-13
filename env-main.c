@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-int main(int ac, char **av,char **env)
+extern char **environ;
+
+int main(void)
 {
 	unsigned int i;
 
 	i = 0;
-	while ( env[i] != NULL)
+	while ( environ[i] != NULL)
 	{
-		printf("%s\n", env[i]);
+		printf("%s\n", environ[i]);
 		i++;
 	}
 	return (0);
