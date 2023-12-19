@@ -9,11 +9,11 @@
 
 int main(int argc, char **argv)
 {
-        char *line;
-        char **args;
+        char *line, **args;
         int status;
 
-        do {
+        while (1)
+	{
                 printf("$ ");
                 line = NULL;
                 size_t bufsize = 0;
@@ -45,12 +45,12 @@ int main(int argc, char **argv)
                         exit(EXIT_FAILURE);
                 }
                 else if (pid < 0)
-                        perror("Error");
-                         else
-                        wait(&status);
+			perror("Error");
+		else
+			wait(&status);
                 free(line);
                 free(args);
-        } while (status);
+        }
         return (0);
 }
 
