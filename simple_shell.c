@@ -9,19 +9,20 @@
  */
 
 
-int main(int ac, char *av, char **env)
+int main(int ac, char **av, char **env)
 {
 	char *input = NULL;
 	size_t bufsize = 0;
 	char *token, **tok_array;
 	int j, i = 0;
+	ssize_t char_read;
+
 	(void)ac, (void)av;
 
 	while (1)
 	{
 		printf("$ ");
-		ssize_t char_read = getline(&input, &bufsize, stdin);
-
+		char_read = getline(&input, &bufsize, stdin);
 		if (char_read == -1)
 		{
 			perror("Error reading line");
@@ -45,9 +46,9 @@ int main(int ac, char *av, char **env)
 		execute_command(tok_array[0], tok_array, env);
 		for (j = 0; j < i; j++)
 			free(tok_array[j]);
+		free(tok_array);
 		i = 0;
 	}
-	free(tok_array);
 	free(input);
 	return (0);
 }
