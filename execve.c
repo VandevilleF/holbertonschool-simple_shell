@@ -1,8 +1,11 @@
 #include "main.h"
 
 /**
- * 
- *
+ * execute_command - excute command line from input
+ * @command: command line
+ * @tok_array: pointer to array of pointers
+ * @env: environnement variable
+ * Return:status
  */
 
 int execute_command(char *command, char **tok_array, char **env)
