@@ -1,6 +1,11 @@
 #include "main.h"
 
-int execute_command(char *command, char *tok_array, char **env)
+/**
+ * 
+ *
+ */
+
+int execute_command(char *command, char **tok_array, char **env)
 {
 	pid_t pid;
 	int wstatus = 0;
@@ -23,7 +28,7 @@ int execute_command(char *command, char *tok_array, char **env)
 	}
 
 	else
-		wait(wstatus);
+		wait(&wstatus);
 
-	return (wstatus)
+	return (wstatus);
 }
