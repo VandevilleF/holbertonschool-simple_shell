@@ -10,5 +10,6 @@
 
 int execute_command(char *command, char **tok_array, char **env);
 int main(int ac, char **av, char **env);
+char **parse_command(char *input, char **tok_array);
 
 #endif
