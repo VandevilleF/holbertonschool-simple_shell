@@ -9,5 +9,6 @@
 #include <sys/wait.h>
 
 int execute_command(char *command, char **tok_array, char **env);
+int main(int ac, char **av, char **env);
 
 #endif
