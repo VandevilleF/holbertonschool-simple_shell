@@ -31,8 +31,7 @@ int main(int ac, char **av, char **env)
 {
 	char *input = NULL;
 	size_t bufsize = 0;
-	char *token, **tok_array;
-	int i;
+	char **tok_array;
 	ssize_t char_read;
 
 	(void)ac, (void)av;
@@ -44,36 +43,17 @@ int main(int ac, char **av, char **env)
 
 		if (char_read != 1)
 		{
-			tok_array = malloc(sizeof(char *) * 20);
-
-			if (tok_array == NULL)
-			{
-				free(input);
-				exit(EXIT_FAILURE);
-			}
-			token = strtok(input, " \n\t");
-
-			i = 0;
-
-			while (token != NULL)
-			{
-				tok_array[i] = strdup(token);
-				token = strtok(NULL, " \n\t");
-				i++;
-			}
-			tok_array[i] = NULL; /*Add NULL at the end*/
+			tok_array = parse_command(input, tok_array);
 
 			if (strcmp(tok_array[0], "exit") == 0)
 			{
 				free_tok_array(tok_array);
-				free(input);
 				break;
 			}
 			execute_command(tok_array[0], tok_array, env);
 
 			free_tok_array(tok_array);
 		}
-		free(input);
 		input = NULL;
 	}
 	return (0);
