@@ -8,7 +8,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int execute_command(char *command, char **tok_array, char **env);
+int execute_command(char *command, char **tok_array, int count, char **av, char **env);
 int main(int ac, char **av, char **env);
+char **parse_command(char *input, char **tok_array);
 
 #endif
