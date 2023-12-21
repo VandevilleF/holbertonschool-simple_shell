@@ -3,7 +3,7 @@
 Description : Simple shell is a simplified version of the shell Linux.
 ## Description
 
-This project is part of the formation of Holberton School.\n
+This project is part of the formation of Holberton School.<br>
 It's a simplified shell Linux
 
 
@@ -28,5 +28,5 @@ ls -la
 
 ## AUTHORS
 
-• Florian Vandeville @Florian Vandeville \n
+• Florian Vandeville @Florian Vandeville <br>
 • Florent Fouquet @florent1711
