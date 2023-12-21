@@ -19,7 +19,6 @@ char **parse_command(char *input, char **tok_array)
 		free(input);
 		exit(EXIT_FAILURE);
 	}
-
 	token = strtok(input, " \n\t");
 
 	while (token != NULL)
@@ -29,6 +28,5 @@ char **parse_command(char *input, char **tok_array)
 		i++;
 	}
 	tok_array[i] = NULL;
-	free(input);
 	return (tok_array);
 }

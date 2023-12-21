@@ -8,7 +8,7 @@
  * Return:status
  */
 
-int execute_command(char *command, char **tok_array, char **env)
+int execute_command(char *command, char **tok_array, int count, char **av, char **env)
 {
 	pid_t pid;
 	int wstatus = 0;
@@ -25,8 +25,9 @@ int execute_command(char *command, char **tok_array, char **env)
 	{
 		if (execve(command, tok_array, env) == -1)
 		{
-			perror("Error executing command");
-			exit(-1);
+			wstatus = 127;
+			fprintf(stderr, "%s: %d: %s: not found\n", av[0], count, tok_array[0]);
+			exit(EXIT_FAILURE);
 		}
 	}
 
