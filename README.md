@@ -87,4 +87,4 @@ $
 ## AUTHORS
 
 • Florian Vandeville @Florian Vandeville<br>
-• @Florent Fouquet @florent1711
+• Florent Fouquet @florent1711
