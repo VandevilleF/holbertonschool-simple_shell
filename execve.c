@@ -25,6 +25,7 @@ int execute_command(char *command, char **tok_array, int count, char **av, char 
 	{
 		if (execve(command, tok_array, env) == -1)
 		{
+			wstatus = 127;
 			fprintf(stderr, "%s: %d: %s: not found\n", av[0], count, tok_array[0]);
 			exit(EXIT_FAILURE);
 		}
