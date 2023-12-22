@@ -1,0 +1,26 @@
+.Dd 21/12/23               \" DATE
+.Dt man_simple_shell     \" Program name and manual section number
+.Os Ubuntu
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm Simple_shell
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.Nm - Simplified Shell
+.Sh SYNOPSIS
+
+$ /hsh [options]
+
+.Sh DESCRIPTION
+Simple_shell is a simplified version of the shell linux
+
+.Sh ENVIRONNEMENT VARIABLE
+PATH
+
+.Sh MODES
+interactive and non-interactive mode
+
+.Sh RUN
+ ./hsh [command] [options]
+
+.Sh AUTHORS
+Florian Vandeville, Florent Fouquet
