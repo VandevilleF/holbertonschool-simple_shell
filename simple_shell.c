@@ -29,7 +29,7 @@ void free_tok_array(char ** tok_array)
 
 int main(int ac, char **av, char **env)
 {
-	char *input = NULL;
+	char *cmd_path, *input = NULL;
 	size_t bufsize = 0;
 	char **tok_array;
 	ssize_t char_read;
@@ -62,12 +62,12 @@ int main(int ac, char **av, char **env)
 				free_tok_array(tok_array);
 				break;
 			}
-			execute_command(tok_array[0], tok_array, count, av, env);
+			cmd_path = _which(strdup (*tok_array));
+			execute_command(cmd_path, tok_array, count, av, env);
 
 			free_tok_array(tok_array);
 		}
 		free(input);
-		input = NULL;
 	}
 	return (0);
 }

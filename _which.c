@@ -19,18 +19,22 @@ char *_getenv(const char *name)
 	return (NULL);
 }
 
-int _which(char *command)
+char *_which(char *command)
 {
 	char *token;
 	char *path = _getenv("PATH");
 	char *path_copy = strdup(path);
 	char *full_path = NULL;
 
+	/*if (command[0] == "/")*/
+		/*return (command);*/
+	printf("%s\n", command[0]);
+
 	token = strtok(path_copy, ":");
 	while (token != NULL)
 	{
 		full_path = malloc(strlen(token) + strlen(command) + 2);
-		printf("%s\n", full_path);
+		
 		if (full_path == NULL)
 		{
 			perror("Error allocate memory");
@@ -38,17 +42,15 @@ int _which(char *command)
 		}
 
 		sprintf(full_path, "%s/%s", token, command);
-
+		
 		if (access(full_path, X_OK) == 0)
-		{
-			free(full_path);
-			free(path_copy);
-			return (1);
-		}
+			return (full_path);
+
+
 		free(full_path);
 		token = strtok(NULL, ":");
 	}
 	free(path_copy);
-	return (0);
+	return (NULL);
 }
 
