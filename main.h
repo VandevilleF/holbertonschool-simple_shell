@@ -11,5 +11,6 @@
 int execute_command(char *command, char **tok_array, int count, char **av, char **env);
 int main(int ac, char **av, char **env);
 char **parse_command(char *input, char **tok_array);
-
+/*char *_getenv(const char *name);*//*work in progress*/
+/*int _which(char *command);*//*work in progress*/
 #endif
