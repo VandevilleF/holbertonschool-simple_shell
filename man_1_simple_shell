@@ -1,0 +1,36 @@
+.Dd 21/12/23               \" DATE
+.Dt man_simple_shell     \" Program name and manual section number
+.Os Ubuntu
+.Sh NAME                 \" Section Header - required - don't modify
+.Nm Simple_shell
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line.
+.Nm - Simplified Shell
+.Sh SYNOPSIS
+simple_shell
+
+.Sh DESCRIPTION
+Simple_shell is a simplified version of the shell linux. 
+The simple shell utility is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file.
+
+.Sh ENVIRONNEMENT VARIABLE
+PATH
+
+.Sh MODES AND RUN
+.b
+Non-interactive mode
+ ./hsh [command] [options]
+
+.i
+Interactive mode
+ ($) /bin/ls
+
+.Sh EXAMPLES
+/bin/ls
+
+q.Pp
+barbie_j       env-main.c  exec.c  fork.c  pid.c  ppid.c    prompt   prompt.c  shell_0.3  stat    test_scripting.sh  wait.c
+env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     shell.c    stat.c  wait
+
+.Sh AUTHORS
+Florian Vandeville, Florent Fouquet
